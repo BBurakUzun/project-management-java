@@ -111,7 +111,7 @@
                         <Label layoutX="130.0" layoutY="69.0" text="14-12-2032" />
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
                            <image>
-                              <Image url="@../../../../../../../../../Desktop/free-edit-2653317-2202989.png" />
+                              <Image url="@free-edit-2653317-2202989.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="25.0" layoutY="29.0" text="\%0">
@@ -146,7 +146,7 @@
             </Label>
             <ImageView fitHeight="51.0" fitWidth="63.0" layoutX="41.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/add_yellow_button_icon_227864.png" />
+                  <Image url="@add_yellow_button_icon_227864.png" />
                </image>
             </ImageView>
             <VBox layoutX="275.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-background-color: f4f4f4; -fx-padding: 5px;">
@@ -162,7 +162,7 @@
                         <Label layoutX="130.0" layoutY="69.0" text="20-06-2025" />
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
                            <image>
-                              <Image url="@../../../../../../../../../Desktop/free-edit-2653317-2202989.png" />
+                              <Image url="@free-edit-2653317-2202989.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="25.0" layoutY="29.0" text="\%75">
@@ -210,7 +210,7 @@
                         <Label layoutX="166.0" layoutY="69.0" text="---" />
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
                            <image>
-                              <Image url="@../../../../../../../../../Desktop/free-edit-2653317-2202989.png" />
+                              <Image url="@free-edit-2653317-2202989.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="25.0" layoutY="29.0" text="\%100">
@@ -236,7 +236,7 @@
                         <Label layoutX="167.0" layoutY="69.0" text="---" />
                         <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
                            <image>
-                              <Image url="@../../../../../../../../../Desktop/free-edit-2653317-2202989.png" />
+                              <Image url="@free-edit-2653317-2202989.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="25.0" layoutY="29.0" text="\%45">
@@ -251,27 +251,27 @@
             </VBox>
             <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="930.0" layoutY="14.0">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/pngwing.com.png" />
+                  <Image url="@pngwing.com.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="901.0" layoutY="149.0">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
+                  <Image url="@toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="680.0" layoutY="150.0">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
+                  <Image url="@toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="434.0" layoutY="151.0">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
+                  <Image url="@toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="226.0" layoutY="151.0">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
+                  <Image url="@toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" />
                </image>
             </ImageView>
          </children>
