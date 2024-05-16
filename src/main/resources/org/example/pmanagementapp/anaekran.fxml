@@ -43,7 +43,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="572.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="572.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.pmanagementapp.MainController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="567.0" prefWidth="973.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
          <children>
@@ -98,7 +98,7 @@
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <VBox layoutX="41.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
+            <VBox fx:id="toDoVbox" layoutX="41.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
                <children>
                   <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
                      <children>
@@ -144,12 +144,12 @@
                   <Font name="Arial Black" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="51.0" fitWidth="63.0" layoutX="41.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="addButton" fitHeight="51.0" fitWidth="63.0" layoutX="41.0" layoutY="91.0" onMouseClicked="#onAddNew" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@add_yellow_button_icon_227864.png" />
                </image>
             </ImageView>
-            <VBox layoutX="275.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-background-color: f4f4f4; -fx-padding: 5px;">
+            <VBox fx:id="onGoingVBox" layoutX="275.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-background-color: f4f4f4; -fx-padding: 5px;">
                <children>
                   <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
                      <children>
@@ -197,7 +197,7 @@
                   </AnchorPane>
                </children>
             </VBox>
-            <VBox layoutX="511.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
+            <VBox fx:id="finishedVBox" layoutX="511.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
                <children>
                   <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
                      <children>
@@ -223,7 +223,7 @@
                   </AnchorPane>
                </children>
             </VBox>
-            <VBox layoutX="745.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
+            <VBox fx:id="abandonedVBox" layoutX="745.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
                <children>
                   <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
                      <children>

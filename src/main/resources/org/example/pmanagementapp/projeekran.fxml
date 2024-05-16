@@ -53,13 +53,13 @@
             <Font name="Berlin Sans FB" size="31.0" />
           </font>
         </Label>
-            <DatePicker layoutX="200.0" layoutY="77.0" prefHeight="25.0" prefWidth="235.0" promptText="05-05-2024" />
+            <DatePicker fx:id="firstDate" layoutX="200.0" layoutY="77.0" prefHeight="25.0" prefWidth="235.0" promptText="05-05-2024" />
             <Label alignment="CENTER" layoutX="85.0" layoutY="80.0" style="&#10;" text="Proje İlk Tarih" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Label>
-            <Slider layoutX="200.0" layoutY="146.0" prefHeight="33.0" prefWidth="235.0" showTickLabels="true" value="20.0" />
+            <Slider fx:id="projectStage" layoutX="200.0" layoutY="146.0" prefHeight="33.0" prefWidth="235.0" showTickLabels="true" value="20.0" />
             <Label alignment="CENTER" layoutX="85.0" layoutY="153.0" style="&#10;" text="Proje Aşaması" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
@@ -70,12 +70,12 @@
                   <Font name="Berlin Sans FB" size="22.0" />
                </font>
             </Label>
-            <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="14.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="deleteButton" fitHeight="44.0" fitWidth="44.0" layoutX="14.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../../Desktop/avd0879fcbf810d38dc8e.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="44.0" layoutX="478.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="saveButton" fitHeight="32.0" fitWidth="44.0" layoutX="478.0" layoutY="360.0" onMouseClicked="#onSave" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../../../../Desktop/tick-33851.png" />
                </image>
@@ -90,13 +90,13 @@
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Label>
-            <TextArea layoutX="195.0" layoutY="199.0" prefHeight="155.0" prefWidth="245.0" promptText="Buraya konuyu giriniz." />
+            <TextArea fx:id="description" layoutX="195.0" layoutY="199.0" prefHeight="155.0" prefWidth="245.0" promptText="Buraya konuyu giriniz." />
             <Label alignment="CENTER" layoutX="85.0" layoutY="116.0" style="&#10;" text="Proje Son Tarih" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
                <font>
                   <Font name="Berlin Sans FB" size="17.0" />
                </font>
             </Label>
-            <DatePicker layoutX="200.0" layoutY="113.0" prefHeight="25.0" prefWidth="235.0" promptText="20-06-2025" />
+            <DatePicker fx:id="lastDate" layoutX="200.0" layoutY="113.0" prefHeight="25.0" prefWidth="235.0" promptText="20-06-2025" />
       </children>
     </AnchorPane>
   </children>
