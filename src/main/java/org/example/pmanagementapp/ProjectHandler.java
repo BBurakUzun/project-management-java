@@ -39,7 +39,19 @@ public void setOnGoing(Project project)
 public void setFinished(Project project)
     {if(onGoingProjects.remove(project))
      finishedProjects.add(project);}
-public void setAbandoned(Project project)
-    {}
+public void setAbandoned(Project project,String listType) {
+    switch (listType) {
+        case "toDo":
+            if(toDoProjects.remove(project))
+                abandonedProjects.add(project);
+            break;
+        case "onGoing":
+            if(onGoingProjects.remove(project))
+                abandonedProjects.add(project);
+            break;
+        default:
+            break;
+    }
+}
 
 }
