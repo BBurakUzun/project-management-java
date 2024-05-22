@@ -14,8 +14,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class MainController extends AbstractController{
+public class MainController extends AbstractController {
 
 
     @FXML
@@ -53,9 +55,8 @@ public class MainController extends AbstractController{
 
     @FXML
     void onAddNew(MouseEvent event) throws IOException {
-        changeToProjectScreen(null);
+        changeToProjectScreen(null, null, toDoVbox);
     }
-
 
 
     void addNewAnchorPane(Project project) {
@@ -64,60 +65,76 @@ public class MainController extends AbstractController{
             System.out.println("toDoVbox is null");
             return;
         }
+        VBox projectVBox = null;
+        // Create a new AnchorPane
+        AnchorPane newAnchorPane = new AnchorPane();
+        newAnchorPane.setPrefSize(206.0, 89.0);
+        newAnchorPane.setStyle("-fx-background-color: #ffffee; -fx-background-radius: 20px;");
 
-            // Create a new AnchorPane
-            AnchorPane newAnchorPane = new AnchorPane();
-            newAnchorPane.setPrefSize(206.0, 89.0);
-            newAnchorPane.setStyle("-fx-background-color: #ffffee; -fx-background-radius: 20px;");
+        // Create and configure child elements
+        Rectangle rectangle = new Rectangle(13.0, 94.0);
+        rectangle.setArcHeight(5.0);
+        rectangle.setArcWidth(5.0);
 
-            // Create and configure child elements
-            Rectangle rectangle = new Rectangle(13.0, 94.0);
-            rectangle.setArcHeight(5.0);
-            rectangle.setArcWidth(5.0);
+        rectangle.setStroke(javafx.scene.paint.Color.BLACK);
+        rectangle.setStrokeWidth(0.0);
+
+        Label projectLabel = new Label(project.getProjectTitle());
+        projectLabel.setLayoutX(25.0);
+        projectLabel.setLayoutY(5.0);
+        projectLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
+
+        Label dateLabel1 = new Label(project.getProjectLastDate());
+        dateLabel1.setLayoutX(130.0);
+        dateLabel1.setLayoutY(69.0);
+
+        ImageView editButton = new ImageView(new Image(MainController.class.getResourceAsStream("free-edit-2653317-2202989.png")));
+        editButton.setFitHeight(32.0);
+        editButton.setFitWidth(32.0);
+        editButton.setLayoutX(174.0);
+        editButton.setLayoutY(6.0);
+
+
+        Label dateLabel2 = new Label(project.getProjectFirstDate());
+        dateLabel2.setLayoutX(25.0);
+        dateLabel2.setLayoutY(69.0);
+
+        double stage = project.getProjectStage();
+        Label progressLabel = new Label("%" + String.valueOf(Math.round(stage)));
+        if (stage == 0) {
             rectangle.setFill(javafx.scene.paint.Color.web("#6ca4c0"));
-            rectangle.setStroke(javafx.scene.paint.Color.BLACK);
-            rectangle.setStrokeWidth(0.0);
+            projectVBox = toDoVbox;
+        } else if (stage > 0 && stage < 100) {
+            rectangle.setFill(javafx.scene.paint.Color.web("#ffd735"));
+            projectVBox = onGoingVBox;
+            ProjectHandler.setOnGoing(project);
+        } else {
+            rectangle.setFill(javafx.scene.paint.Color.web("#93ef9c"));
+            projectVBox = finishedVBox;
+            ProjectHandler.setOnGoing(project);
+        }
 
-            Label projectLabel = new Label(project.getProjectTitle());
-            projectLabel.setLayoutX(25.0);
-            projectLabel.setLayoutY(5.0);
-            projectLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
-
-            Label dateLabel1 = new Label(project.getProjectLastDate());
-            dateLabel1.setLayoutX(130.0);
-            dateLabel1.setLayoutY(69.0);
-
-            ImageView editButton = new ImageView(new Image(MainController.class.getResourceAsStream("free-edit-2653317-2202989.png")));
-            editButton.setFitHeight(32.0);
-            editButton.setFitWidth(32.0);
-            editButton.setLayoutX(174.0);
-            editButton.setLayoutY(6.0);
-
-            Label progressLabel = new Label(String.valueOf(project.getProjectStage()));
-            progressLabel.setLayoutX(25.0);
-            progressLabel.setLayoutY(29.0);
-            progressLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
-
-            Label dateLabel2 = new Label(project.getProjectFirstDate());
-            dateLabel2.setLayoutX(25.0);
-            dateLabel2.setLayoutY(69.0);
-
-            // Add child elements to the AnchorPane
-            newAnchorPane.getChildren().addAll(rectangle, projectLabel, dateLabel1, editButton, progressLabel, dateLabel2);
-
-            editButton.setOnMouseClicked(event -> {
-                changeToProjectScreen(newAnchorPane);
+        progressLabel.setLayoutX(25.0);
+        progressLabel.setLayoutY(29.0);
+        progressLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
 
 
+        // Add child elements to the AnchorPane
+        newAnchorPane.getChildren().addAll(rectangle, projectLabel, dateLabel1, editButton, progressLabel, dateLabel2);
 
-            });
+        VBox finalProjectVBox = projectVBox;
+        editButton.setOnMouseClicked(event -> {
+            changeToProjectScreen(newAnchorPane, project, finalProjectVBox);
 
-            // Add the new AnchorPane to the VBox
-            toDoVbox.getChildren().add(newAnchorPane);
+
+        });
+
+        // Add the new AnchorPane to the VBox
+        projectVBox.getChildren().add(newAnchorPane);
 
     }
 
-    private void changeToProjectScreen(AnchorPane currentAnchor) {
+    private void changeToProjectScreen(AnchorPane currentAnchor, Project project, VBox projectVBox) {
         if (newWindowStage == null || !newWindowStage.isShowing()) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("projeekran.fxml"));
@@ -130,11 +147,15 @@ public class MainController extends AbstractController{
                 newWindowStage.setScene(new Scene(root));
                 newWindowStage.show();
 
-                if (currentAnchor != null){
-                    projectController.setProject(currentAnchor, toDoVbox);
+                if (currentAnchor != null) {
+                    projectController.setProject(currentAnchor, project, projectVBox);
                     projectController.setEvents();
+                    projectController.projectTitle.setText(project.getProjectTitle());
+                    projectController.projectStage.setValue(project.getProjectStage());
+//                    projectController.firstDate.setValue(LocalDate.of(project.getProjectFirstDate().s));
+                    projectController.projectStage.setValue(project.getProjectStage());
+                    projectController.projectStage.setValue(project.getProjectStage());
                 }
-
 
 
             } catch (IOException e) {

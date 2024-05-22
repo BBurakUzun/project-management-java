@@ -15,25 +15,26 @@ public  class ProjectController extends  AbstractController{
     public Button deleteButton;
 
     @FXML
-    private TextArea description;
+    public TextArea description;
 
     @FXML
-    private TextField projectTitle;
+    public TextField projectTitle;
 
     @FXML
-    private DatePicker firstDate;
+    public DatePicker firstDate;
 
     @FXML
-    private DatePicker lastDate;
+    public DatePicker lastDate;
 
     @FXML
-    private Slider projectStage;
+    public Slider projectStage;
 
     @FXML
     private ImageView saveButton;
 
     private static MainController mainController;
     private static AnchorPane currentAnchorProject;
+    private static Project currentProject;
     private VBox Vbox;
 
 
@@ -49,12 +50,13 @@ public  class ProjectController extends  AbstractController{
         System.out.println("ENTER HERE 1");
         deleteButton.setOnAction(e -> {
             System.out.println("ENTER HERE 2");
-            Vbox.getChildren().remove(ProjectController.currentAnchorProject);
+            Vbox.getChildren().remove(currentAnchorProject);
         });
     }
 
-    public void setProject(AnchorPane project, VBox vbox) {
-        ProjectController.currentAnchorProject = project;
+    public void setProject(AnchorPane anchhorProject, Project project, VBox vbox) {
+        ProjectController.currentAnchorProject = anchhorProject;
+        ProjectController.currentProject = project;
         this.Vbox = vbox;
 
 
@@ -73,8 +75,12 @@ public  class ProjectController extends  AbstractController{
         String desc = description.getText();
         Project newProject = new Project(name, first, last, Math.round(stage), desc);
 
-        ProjectHandler.addProject(newProject);
+        if (currentProject != null && currentProject.getProjectTitle().equals(name)) {
+            Vbox.getChildren().remove(currentAnchorProject);
+            ProjectHandler.abandonedProjects.add(currentProject);
+        }
 
+        ProjectHandler.addProject(newProject);
 
         ProjectController.mainController.addNewAnchorPane(newProject);
 

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db34b3de-30b4-4254-9b2c-b9c620202493" name="Changes" comment="resim commit">
+    <list default="true" id="db34b3de-30b4-4254-9b2c-b9c620202493" name="Changes" comment="commit asdas">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/add_yellow_button_icon_227864.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/add_yellow_button_icon_227864.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/avd0879fcbf810d38dc8e.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/avd0879fcbf810d38dc8e.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pngfind.com-sort-icon-png-6847391.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/pngfind.com-sort-icon-png-6847391.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pngwing.com.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/pngwing.com.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/toppng.com-recycling-bin-vector-delete-icon-png-black-327x401.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,27 +34,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Buğra/Desktop/projev98/project-management-java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Buğra/Desktop/projev98/project-management-java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.pmanagementapp.HelloApplication" />
+      <module name="pmanagementapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pmanagementapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
         <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -71,6 +92,13 @@
       <updated>1715795304891</updated>
       <workItem from="1715795306049" duration="2000" />
       <workItem from="1715797512824" duration="316000" />
+      <workItem from="1716012235358" duration="406000" />
+      <workItem from="1716190968865" duration="33000" />
+      <workItem from="1716268915831" duration="9000" />
+      <workItem from="1716310788173" duration="3320000" />
+      <workItem from="1716319160478" duration="8499000" />
+      <workItem from="1716357874875" duration="8691000" />
+      <workItem from="1716382684417" duration="1919000" />
     </task>
     <task id="LOCAL-00001" summary="resim commit">
       <option name="closed" value="true" />
