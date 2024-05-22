@@ -9,7 +9,7 @@ static LinkedList<Project> onGoingProjects=new LinkedList<>();;
 static LinkedList<Project> finishedProjects=new LinkedList<>();;
 static LinkedList<Project> abandonedProjects=new LinkedList<>();
 
-public void addProject(Project project)
+public static void addProject(Project project)
 {toDoProjects.add(project);}
     public void deleteProject(Project project, String listType) {
         switch (listType) {
@@ -30,16 +30,16 @@ public void addProject(Project project)
                 break;
         }
     }
-public void editProject(Double stage)
+public static void editProject(Double stage)
 {}
-public void setOnGoing(Project project)
+public static void setOnGoing(Project project)
 {   if(toDoProjects.remove(project))
     onGoingProjects.add(project);}
 
-public void setFinished(Project project)
+public static void setFinished(Project project)
     {if(onGoingProjects.remove(project))
      finishedProjects.add(project);}
-public void setAbandoned(Project project,String listType) {
+public static void setAbandoned(Project project,String listType) {
     switch (listType) {
         case "toDo":
             if(toDoProjects.remove(project))
