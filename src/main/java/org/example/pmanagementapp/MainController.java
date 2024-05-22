@@ -21,7 +21,7 @@ public class MainController extends AbstractController {
 
 
     @FXML
-    private VBox abandonedVBox;
+    public VBox abandonedVBox;
 
     @FXML
     private ImageView addButton;
@@ -41,10 +41,18 @@ public class MainController extends AbstractController {
 
     @FXML
     public void initialize() {
-        if (toDoVbox == null) {
-            System.out.println("toDoVbox is not initialized");
-        } else {
-            System.out.println("toDoVbox is initialized");
+
+        for (Project project : ProjectHandler.toDoProjects) {
+            addNewAnchorPane(project);
+        }
+        for (Project project : ProjectHandler.onGoingProjects) {
+            addNewAnchorPane(project);
+        }
+        for (Project project : ProjectHandler.finishedProjects) {
+            addNewAnchorPane(project);
+        }
+        for (Project project : ProjectHandler.abandonedProjects) {
+            addNewAnchorPane(project);
         }
 
     }
@@ -66,12 +74,10 @@ public class MainController extends AbstractController {
             return;
         }
         VBox projectVBox = null;
-        // Create a new AnchorPane
         AnchorPane newAnchorPane = new AnchorPane();
         newAnchorPane.setPrefSize(206.0, 89.0);
         newAnchorPane.setStyle("-fx-background-color: #ffffee; -fx-background-radius: 20px;");
 
-        // Create and configure child elements
         Rectangle rectangle = new Rectangle(13.0, 94.0);
         rectangle.setArcHeight(5.0);
         rectangle.setArcWidth(5.0);
@@ -119,7 +125,6 @@ public class MainController extends AbstractController {
         progressLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
 
 
-        // Add child elements to the AnchorPane
         newAnchorPane.getChildren().addAll(rectangle, projectLabel, dateLabel1, editButton, progressLabel, dateLabel2);
 
         VBox finalProjectVBox = projectVBox;
@@ -129,7 +134,6 @@ public class MainController extends AbstractController {
 
         });
 
-        // Add the new AnchorPane to the VBox
         projectVBox.getChildren().add(newAnchorPane);
 
     }
@@ -152,9 +156,18 @@ public class MainController extends AbstractController {
                     projectController.setEvents();
                     projectController.projectTitle.setText(project.getProjectTitle());
                     projectController.projectStage.setValue(project.getProjectStage());
-//                    projectController.firstDate.setValue(LocalDate.of(project.getProjectFirstDate().s));
-                    projectController.projectStage.setValue(project.getProjectStage());
-                    projectController.projectStage.setValue(project.getProjectStage());
+
+                    int day = Integer.parseInt(project.getProjectFirstDate().substring(0, 2));
+                    int month = Integer.parseInt(project.getProjectFirstDate().substring(3, 5));
+                    int year = Integer.parseInt(project.getProjectFirstDate().substring(6, 10));
+                    projectController.firstDate.setValue(LocalDate.of(year, month, day));
+
+
+                    int day2 = Integer.parseInt(project.getProjectLastDate().substring(0, 2));
+                    int month2 = Integer.parseInt(project.getProjectLastDate().substring(3, 5));
+                    int year2 = Integer.parseInt(project.getProjectLastDate().substring(6, 10));
+                    projectController.lastDate.setValue(LocalDate.of(year, month, day));
+                    projectController.description.setText(project.getDescription());
                 }
 
 
@@ -164,10 +177,6 @@ public class MainController extends AbstractController {
         } else {
             newWindowStage.toFront();
         }
-    }
-
-    void delete() {
-
     }
 
 }

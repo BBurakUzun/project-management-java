@@ -15,6 +15,16 @@ public class Project {
         this.description = description;
     }
 
+
+    public String toCSV() {
+        return String.format("%s,%s,%s,%.2f,%s", projectTitle, projectFirstDate, projectLastDate, projectStage, description);
+    }
+
+    public static Project fromCSV(String csv) {
+        String[] fields = csv.split(",");
+        return new Project(fields[0], fields[1], fields[2], Double.parseDouble(fields[3]), fields[4]);
+    }
+
     public String getDescription() {
         return description;
     }

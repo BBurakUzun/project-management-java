@@ -2,10 +2,12 @@ package org.example.pmanagementapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.time.format.DateTimeFormatter;
@@ -47,10 +49,10 @@ public  class ProjectController extends  AbstractController{
     }
 
     public void setEvents() {
-        System.out.println("ENTER HERE 1");
         deleteButton.setOnAction(e -> {
-            System.out.println("ENTER HERE 2");
             Vbox.getChildren().remove(currentAnchorProject);
+            addNewAnchorPane(currentProject);
+            ProjectHandler.deleteProjectFromCSV(currentProject);
         });
     }
 
@@ -78,6 +80,7 @@ public  class ProjectController extends  AbstractController{
         if (currentProject != null && currentProject.getProjectTitle().equals(name)) {
             Vbox.getChildren().remove(currentAnchorProject);
             ProjectHandler.abandonedProjects.add(currentProject);
+            mainController.abandonedVBox.getChildren().add(currentAnchorProject);
         }
 
         ProjectHandler.addProject(newProject);
@@ -92,7 +95,59 @@ public  class ProjectController extends  AbstractController{
     }
 
 
-    void editProject() {
+    void addNewAnchorPane(Project project) {
+
+        VBox projectVBox = null;
+        AnchorPane newAnchorPane = new AnchorPane();
+        newAnchorPane.setPrefSize(206.0, 89.0);
+        newAnchorPane.setStyle("-fx-background-color: #ffffee; -fx-background-radius: 20px;");
+
+        Rectangle rectangle = new Rectangle(13.0, 94.0);
+        rectangle.setArcHeight(5.0);
+        rectangle.setArcWidth(5.0);
+
+        rectangle.setStroke(javafx.scene.paint.Color.BLACK);
+        rectangle.setStrokeWidth(0.0);
+
+        Label projectLabel = new Label(project.getProjectTitle());
+        projectLabel.setLayoutX(25.0);
+        projectLabel.setLayoutY(5.0);
+        projectLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
+
+        Label dateLabel1 = new Label(project.getProjectLastDate());
+        dateLabel1.setLayoutX(130.0);
+        dateLabel1.setLayoutY(69.0);
+
+        ImageView editButton = new ImageView(new Image(MainController.class.getResourceAsStream("free-edit-2653317-2202989.png")));
+        editButton.setFitHeight(32.0);
+        editButton.setFitWidth(32.0);
+        editButton.setLayoutX(174.0);
+        editButton.setLayoutY(6.0);
+
+
+        Label dateLabel2 = new Label(project.getProjectFirstDate());
+        dateLabel2.setLayoutX(25.0);
+        dateLabel2.setLayoutY(69.0);
+
+        double stage = project.getProjectStage();
+        Label progressLabel = new Label("%" + String.valueOf(Math.round(stage)));
+
+            rectangle.setFill(javafx.scene.paint.Color.web("red"));
+            projectVBox = mainController.abandonedVBox;
+
+
+        progressLabel.setLayoutX(25.0);
+        progressLabel.setLayoutY(29.0);
+        progressLabel.setStyle("-fx-font-family: 'Berlin Sans FB'; -fx-font-size: 15.0;");
+
+
+        newAnchorPane.getChildren().addAll(rectangle, projectLabel, dateLabel1, editButton, progressLabel, dateLabel2);
+
+        VBox finalProjectVBox = projectVBox;
+
+
+        projectVBox.getChildren().add(newAnchorPane);
 
     }
+
 }

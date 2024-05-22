@@ -69,7 +69,7 @@
             </Label>
             <ImageView fx:id="saveButton" fitHeight="32.0" fitWidth="44.0" layoutX="478.0" layoutY="360.0" onMouseClicked="#onSave" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../Desktop/tick-33851.png" />
+                  <Image url="@tick-33851.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="375.0" layoutY="363.0" prefHeight="25.0" prefWidth="92.0" style="&#10;" text="KAYDET" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
@@ -89,8 +89,8 @@
                </font>
             </Label>
             <DatePicker fx:id="lastDate" layoutX="200.0" layoutY="113.0" prefHeight="25.0" prefWidth="235.0" promptText="20-06-2025" />
-            <TextField fx:id="projectTitle" layoutX="103.0" layoutY="10.0" prefHeight="44.0" prefWidth="331.0" promptText="Proje Ad" />
-            <Button fx:id="deleteButton" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" text="Button" />
+            <TextField fx:id="projectTitle" layoutX="103.0" layoutY="10.0" prefHeight="44.0" prefWidth="348.0" promptText="Proje Ad" />
+            <Button fx:id="deleteButton" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="44.0" />
       </children>
     </AnchorPane>
   </children>

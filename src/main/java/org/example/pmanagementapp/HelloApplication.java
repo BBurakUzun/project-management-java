@@ -11,6 +11,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        ProjectHandler.loadProjects();
+
         FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("anaekran.fxml"));
         Parent mainRoot = mainLoader.load();
         MainController mainController = mainLoader.getController();
@@ -27,6 +29,8 @@ public class HelloApplication extends Application {
         stage.setScene(new Scene(mainRoot,1000, 600));
 
         stage.show();
+
+        stage.setOnCloseRequest(event -> ProjectHandler.saveProjects());
     }
 
     public static void main(String[] args) {

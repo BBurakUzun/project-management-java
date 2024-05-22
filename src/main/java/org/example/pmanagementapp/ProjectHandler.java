@@ -1,7 +1,13 @@
 package org.example.pmanagementapp;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+import java.util.stream.Collectors;
 
 public class ProjectHandler {
 static LinkedList<Project> toDoProjects=new LinkedList<>();;
@@ -53,5 +59,70 @@ public static void setAbandoned(Project project,String listType) {
             break;
     }
 }
+
+    public static void saveProjects() {
+        try (FileWriter writer = new FileWriter("projects.csv")) {
+            for (Project project : toDoProjects) {
+                writer.write("toDo," + project.toCSV() + "\n");
+            }
+            for (Project project : onGoingProjects) {
+                writer.write("onGoing," + project.toCSV() + "\n");
+            }
+            for (Project project : finishedProjects) {
+                writer.write("finished," + project.toCSV() + "\n");
+            }
+            for (Project project : abandonedProjects) {
+                writer.write("abandoned," + project.toCSV() + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void loadProjects() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("projects.csv"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",", 2);
+                String listType = parts[0];
+                Project project = Project.fromCSV(parts[1]);
+                switch (listType) {
+                    case "toDo":
+                        toDoProjects.add(project);
+                        break;
+                    case "onGoing":
+                        onGoingProjects.add(project);
+                        break;
+                    case "finished":
+                        finishedProjects.add(project);
+                        break;
+                    case "abandoned":
+                        abandonedProjects.add(project);
+                        break;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void deleteProjectFromCSV(Project project) {
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("projects.csv"))) {
+            List<String> lines = reader.lines().collect(Collectors.toList());
+            try (FileWriter writer = new FileWriter("projects.csv")) {
+                for (String line : lines) {
+                    if (!line.contains(project.getProjectTitle())) {
+                        writer.write(line + "\n");
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

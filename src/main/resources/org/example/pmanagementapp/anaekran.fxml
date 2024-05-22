@@ -98,32 +98,7 @@
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <VBox fx:id="toDoVbox" layoutX="41.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
-               <children>
-                  <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6ca4c0" height="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-                        <Label layoutX="25.0" layoutY="5.0" text="Blockchain Projesi">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="130.0" layoutY="69.0" text="14-12-2032" />
-                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
-                           <image>
-                              <Image url="@free-edit-2653317-2202989.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="25.0" layoutY="29.0" text="\%0">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="25.0" layoutY="69.0" text="05-05-2024" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
+            <VBox fx:id="toDoVbox" layoutX="41.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;" />
             <Label layoutX="275.0" layoutY="151.0" prefHeight="32.0" prefWidth="191.0" text="DEVAM EDEN" underline="true">
                <font>
                   <Font name="Arial Rounded MT Bold" size="22.0" />
@@ -149,106 +124,9 @@
                   <Image url="@add_yellow_button_icon_227864.png" />
                </image>
             </ImageView>
-            <VBox fx:id="onGoingVBox" layoutX="275.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-background-color: f4f4f4; -fx-padding: 5px;">
-               <children>
-                  <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd735" height="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-                        <Label layoutX="25.0" layoutY="5.0" text="Veri Yapıları Projesi">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="130.0" layoutY="69.0" text="20-06-2025" />
-                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
-                           <image>
-                              <Image url="@free-edit-2653317-2202989.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="25.0" layoutY="29.0" text="\%75">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="25.0" layoutY="69.0" text="05-05-2024" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd735" height="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-                        <Label layoutX="25.0" layoutY="5.0" text="Mikroişlemciler">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="130.0" layoutY="69.0" text="20-06-2025" />
-                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
-                           <image>
-                              <Image url="@../../../../../../../../../Desktop/free-edit-2653317-2202989.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="25.0" layoutY="29.0" text="\%92">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="25.0" layoutY="69.0" text="05-05-2024" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-            <VBox fx:id="finishedVBox" layoutX="511.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
-               <children>
-                  <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#93ef9c" height="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-                        <Label layoutX="25.0" layoutY="5.0" text="Pixel Platformer">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="166.0" layoutY="69.0" text="---" />
-                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
-                           <image>
-                              <Image url="@free-edit-2653317-2202989.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="25.0" layoutY="29.0" text="\%100">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="27.0" layoutY="69.0" text="05-05-2024" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-            <VBox fx:id="abandonedVBox" layoutX="745.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;">
-               <children>
-                  <AnchorPane prefHeight="89.0" prefWidth="206.0" style="-fx-background-color: #ffffee; -fx-background-radius: 20px;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d91818" height="94.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="13.0" />
-                        <Label layoutX="25.0" layoutY="5.0" text="Manav Simulator">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="167.0" layoutY="69.0" text="---" />
-                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="174.0" layoutY="6.0">
-                           <image>
-                              <Image url="@free-edit-2653317-2202989.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="25.0" layoutY="29.0" text="\%45">
-                           <font>
-                              <Font name="Berlin Sans FB" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="25.0" layoutY="69.0" text="03-01-2023" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
+            <VBox fx:id="onGoingVBox" layoutX="275.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-background-color: f4f4f4; -fx-padding: 5px;" />
+            <VBox fx:id="finishedVBox" layoutX="511.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;" />
+            <VBox fx:id="abandonedVBox" layoutX="745.0" layoutY="187.0" prefHeight="380.0" prefWidth="201.0" style="-fx-spacing: 20px; -fx-background-radius: 8px; -fx-padding: 5px; -fx-background-color: f4f4f4;" />
             <ImageView fitHeight="44.0" fitWidth="40.0" layoutX="930.0" layoutY="14.0">
                <image>
                   <Image url="@pngwing.com.png" />
