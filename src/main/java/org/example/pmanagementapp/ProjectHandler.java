@@ -10,10 +10,10 @@ import java.util.Queue;
 import java.util.stream.Collectors;
 
 public class ProjectHandler {
-static LinkedList<Project> toDoProjects=new LinkedList<>();;
-static LinkedList<Project> onGoingProjects=new LinkedList<>();;
-static LinkedList<Project> finishedProjects=new LinkedList<>();;
-static LinkedList<Project> abandonedProjects=new LinkedList<>();
+static Linkedlist toDoProjects=new Linkedlist();;
+static Linkedlist onGoingProjects=new Linkedlist();;
+static Linkedlist finishedProjects=new Linkedlist();;
+static Linkedlist abandonedProjects=new Linkedlist();
 
 public static void addProject(Project project)
 {toDoProjects.add(project);}
