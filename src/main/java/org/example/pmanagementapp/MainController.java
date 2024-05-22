@@ -166,7 +166,7 @@ public class MainController extends AbstractController {
                     int day2 = Integer.parseInt(project.getProjectLastDate().substring(0, 2));
                     int month2 = Integer.parseInt(project.getProjectLastDate().substring(3, 5));
                     int year2 = Integer.parseInt(project.getProjectLastDate().substring(6, 10));
-                    projectController.lastDate.setValue(LocalDate.of(year, month, day));
+                    projectController.lastDate.setValue(LocalDate.of(year2, month2, day2));
                     projectController.description.setText(project.getDescription());
                 }
 
