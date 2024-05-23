@@ -79,14 +79,28 @@ public  class ProjectController extends  AbstractController{
 
         if (currentProject != null && currentProject.getProjectTitle().equals(name)) {
             Vbox.getChildren().remove(currentAnchorProject);
-            ProjectHandler.abandonedProjects.add(currentProject);
-            mainController.abandonedVBox.getChildren().add(currentAnchorProject);
+            if (currentProject.getProjectStage()==0)
+                ProjectHandler.toDoProjects.remove(currentProject);
+            else if (currentProject.getProjectStage() < 100 && currentProject.getProjectStage() > 0) {
+                ProjectHandler.onGoingProjects.remove(currentProject);
+            }
+            else {
+                ProjectHandler.finishedProjects.remove(currentProject);
+            }
+            ProjectHandler.deleteProjectFromCSV(currentProject);
         }
 
-        ProjectHandler.addProject(newProject);
+        if (stage == 0) {
+            ProjectHandler.addProject(newProject);
+        } else if (stage < 100 && stage > 0) {
+            ProjectHandler.onGoingProjects.add(newProject);
+        } else if (stage == 100) {
+            ProjectHandler.finishedProjects.add(newProject);
+        }
 
         ProjectController.mainController.addNewAnchorPane(newProject);
 
+        ProjectHandler.saveProjects();
         Stage currentStage = (Stage) projectTitle.getScene().getWindow();
         currentStage.close();
 

@@ -7,10 +7,8 @@
     <list default="true" id="db34b3de-30b4-4254-9b2c-b9c620202493" name="Changes" comment="commit asdas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects.csv" beforeDir="false" afterPath="$PROJECT_DIR$/projects.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/anaekran.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/pmanagementapp/anaekran.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pmanagementapp/ProjectHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

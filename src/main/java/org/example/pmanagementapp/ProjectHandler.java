@@ -110,7 +110,7 @@ public static void setAbandoned(Project project,String listType) {
     public static void deleteProjectFromCSV(Project project) {
 
         try (BufferedReader reader = new BufferedReader(new FileReader("projects.csv"))) {
-            List<String> lines = reader.lines().collect(Collectors.toList());
+            List<String> lines = reader.lines().toList();
             try (FileWriter writer = new FileWriter("projects.csv")) {
                 for (String line : lines) {
                     if (!line.contains(project.getProjectTitle())) {
