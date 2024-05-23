@@ -17,7 +17,7 @@ public class Project {
 
 
     public String toCSV() {
-        return String.format("%s,%s,%s,%.2f,%s", projectTitle, projectFirstDate, projectLastDate, projectStage, description);
+        return String.format("%s,%s,%s,%d,%s", projectTitle, projectFirstDate, projectLastDate, Math.round(projectStage), description);
     }
 
     public static Project fromCSV(String csv) {

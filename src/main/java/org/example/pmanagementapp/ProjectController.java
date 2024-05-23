@@ -43,7 +43,7 @@ public  class ProjectController extends  AbstractController{
     @FXML
     public void initialize() {
         if (mainController == null) {
-            System.out.println("hay aq");
+            System.out.println("maincontroller null başladı");
         }
 
     }

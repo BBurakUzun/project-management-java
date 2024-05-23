@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,6 +32,9 @@ public class MainController extends AbstractController {
 
     @FXML
     private VBox onGoingVBox;
+
+    @FXML
+    private Button logOutButton;
 
     @FXML
     public VBox toDoVbox;
@@ -94,9 +98,9 @@ public class MainController extends AbstractController {
         dateLabel1.setLayoutX(130.0);
         dateLabel1.setLayoutY(69.0);
 
-        ImageView editButton = new ImageView(new Image(MainController.class.getResourceAsStream("free-edit-2653317-2202989.png")));
-        editButton.setFitHeight(32.0);
-        editButton.setFitWidth(32.0);
+        ImageView editButton = new ImageView(new Image(MainController.class.getResourceAsStream("712082-200.png")));
+        editButton.setFitHeight(35.0);
+        editButton.setFitWidth(36.0);
         editButton.setLayoutX(174.0);
         editButton.setLayoutY(6.0);
 
@@ -177,6 +181,12 @@ public class MainController extends AbstractController {
         } else {
             newWindowStage.toFront();
         }
+    }
+
+    @FXML
+    void logOut(MouseEvent event) {
+        Stage currentStage = (Stage) toDoVbox.getScene().getWindow();
+        currentStage.close();
     }
 
 }
